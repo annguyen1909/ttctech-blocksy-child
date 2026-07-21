@@ -1,0 +1,10 @@
+# OS / editor
+.DS_Store
+*.log
+*.swp
+.idea/
+.vscode/
+
+# Optional local overrides
+.env
+.env.*
