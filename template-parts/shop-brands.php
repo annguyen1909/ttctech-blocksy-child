@@ -1,6 +1,7 @@
 <?php
-$shop = wc_get_page_permalink('shop');
+$shop = home_url('/shop/');
 $brands = ttc_brand_catalog();
+$brands[] = $brands[0]; // reference strip closes with Sandvik.
 ?>
 <section class="ttc-brands">
 	<h2 class="ttc-section-title">Tìm theo thương hiệu</h2>

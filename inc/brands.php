@@ -5,7 +5,7 @@
 function ttc_brand_catalog() {
 	$base = TTC_THEME_URI . '/assets/img/brands';
 	return [
-		['name' => 'Sandvik', 'slug' => 'sandvik', 'img' => "$base/brand_1.jpg"],
+		['name' => 'Sandvik', 'label' => 'SANDVIK COROMANT', 'slug' => 'sandvik', 'img' => "$base/brand_1.jpg"],
 		['name' => 'Taegutec', 'slug' => 'taegutec', 'img' => "$base/brand_2.jpg"],
 		['name' => 'OSG', 'slug' => 'osg', 'img' => "$base/brand_3.jpg"],
 		['name' => 'YG', 'slug' => 'yg', 'img' => "$base/brand_4.jpg"],
@@ -16,10 +16,22 @@ function ttc_brand_catalog() {
 		['name' => 'SEC', 'slug' => 'sec', 'img' => "$base/brand_9.jpg"],
 		['name' => 'Mahr', 'slug' => 'mahr', 'img' => "$base/brand_10.jpg"],
 		['name' => 'Dasqua', 'slug' => 'dasqua', 'img' => "$base/brand_11.jpg"],
-		['name' => 'Helios', 'slug' => 'helios', 'img' => "$base/brand_12.svg"],
-		['name' => 'Peacock', 'slug' => 'peacock', 'img' => "$base/brand_13.jpg"],
-		['name' => 'Master', 'slug' => 'master', 'img' => "$base/brand_14.jpg"],
+		['name' => 'Samchully', 'slug' => 'samchully', 'img' => "$base/brand_16.jpg"],
 	];
+}
+
+function ttc_selected_brand() {
+	$slug = isset($_GET['ttc_brand']) ? sanitize_title(wp_unslash($_GET['ttc_brand'])) : '';
+	if (!$slug && function_exists('is_product_tag') && is_product_tag()) {
+		$term = get_queried_object();
+		$slug = $term instanceof WP_Term ? $term->slug : '';
+	}
+	foreach (ttc_brand_catalog() as $brand) {
+		if ($brand['slug'] === $slug) {
+			return $brand;
+		}
+	}
+	return null;
 }
 
 function ttc_brand_image_for_product($product_id = 0) {

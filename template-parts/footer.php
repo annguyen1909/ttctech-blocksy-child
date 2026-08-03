@@ -1,11 +1,10 @@
 <?php
 $logo = TTC_THEME_URI . '/assets/img/logo.png';
-$cats = ['Dụng cụ cắt', 'Gá kẹp dao', 'Dụng cụ đo', 'Dầu cắt gọt', 'Gá kẹp phôi', 'Dịch vụ'];
+$cats = ['Dụng cụ cắt', 'Dụng cụ đo', 'Gá kẹp dao', 'Gá kẹp phôi', 'Dầu cắt gọt', 'Dụng cụ phụ trợ', 'Máy công cụ', 'Dịch vụ'];
 $support = [
-	['Chính sách vận chuyển', 'chinh-sach-van-chuyen'],
-	['Chính sách thanh toán', 'chinh-sach-thanh-toan'],
 	['Chính sách bảo hành', 'chinh-sach-bao-hanh'],
-	['Hỗ trợ kỹ thuật', 'ho-tro-ky-thuat'],
+	['Chính sách vận chuyển', 'chinh-sach-van-chuyen'],
+	['Yêu cầu kỹ thuật', 'ho-tro-ky-thuat'],
 ];
 ?>
 <footer class="ttc-footer">
@@ -14,12 +13,13 @@ $support = [
 			<a class="ttc-logo ttc-logo--footer" href="<?php echo esc_url(home_url('/')); ?>">
 				<img src="<?php echo esc_url($logo); ?>" alt="TTCTECH" width="140" height="43" />
 			</a>
-			<p class="ttc-footer__tagline">Nơi công nghệ gặp đổi mới</p>
+			<p class="ttc-footer__tagline">Where innovation meets!</p>
 			<ul class="ttc-footer__contact">
-				<li>Địa chỉ: Hà Nội, Việt Nam</li>
-				<li>Điện thoại: <a href="tel:02462931272">024 6293 1272</a></li>
-				<li>Email: <a href="mailto:info@ttctech.vn">info@ttctech.vn</a></li>
-				<li>Website: <a href="https://ttctech.vn" target="_blank" rel="noopener">ttctech.vn</a></li>
+				<li>HN: Tầng 4, nhà số 5, ngõ 72, Miêu Đàm, phường Từ Liêm, Hà Nội.</li>
+				<li>TP.HCM: Tầng 3, 29 đường số 5, KDC Vạn Phúc, phường Hiệp Bình, TP.HCM</li>
+				<li><a href="mailto:info@ttctech.vn">info@ttctech.vn</a></li>
+				<li><a href="https://ttctech.vn" target="_blank" rel="noopener">www.ttctech.vn</a></li>
+				<li><a href="https://www.facebook.com/ttctech.vn" target="_blank" rel="noopener">www.facebook.com/ttctech.vn</a></li>
 			</ul>
 		</div>
 
@@ -44,7 +44,7 @@ $support = [
 	</div>
 	<div class="ttc-footer__bottom">
 		<div class="ttc-container">
-			© <?php echo esc_html(gmdate('Y')); ?> TTCTECH. Bảo lưu mọi quyền.
+			© Bản quyền thuộc về TTC Technology Việt Nam.
 		</div>
 	</div>
 </footer>

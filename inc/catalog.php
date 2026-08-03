@@ -5,6 +5,12 @@
 
 add_filter('woocommerce_enqueue_styles', '__return_empty_array');
 
+// ponytail: shop cards use contain/1:1 — disable WC hover zoom on single (too aggressive).
+add_filter('theme_mod_has_product_single_zoom', static fn () => 'no');
+add_action('after_setup_theme', static function () {
+	remove_theme_support('wc-product-gallery-zoom');
+}, 20);
+
 add_action('init', function () {
 	remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10);
 	remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);

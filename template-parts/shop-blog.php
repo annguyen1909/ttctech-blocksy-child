@@ -33,7 +33,10 @@ $blog_url = get_permalink((int) get_option('page_for_posts')) ?: home_url('/');
 				<article class="ttc-blog__item">
 					<a href="<?php echo esc_url(get_permalink($post)); ?>">
 						<?php echo get_the_post_thumbnail($post, 'thumbnail', ['loading' => 'lazy']); ?>
-						<h3><?php echo esc_html(get_the_title($post)); ?></h3>
+						<span class="ttc-blog__item-body">
+							<span class="ttc-blog__item-meta"><?php echo esc_html(get_the_date('d/m/Y', $post)); ?></span>
+							<h3><?php echo esc_html(get_the_title($post)); ?></h3>
+						</span>
 					</a>
 				</article>
 			<?php endforeach; ?>

@@ -13,7 +13,7 @@ add_action('wp_enqueue_scripts', function () {
 
 	wp_enqueue_style(
 		'ttc-fonts',
-		'https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap',
+		'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap',
 		[],
 		null
 	);
