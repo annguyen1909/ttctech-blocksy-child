@@ -15,7 +15,7 @@ $img = TTC_THEME_URI . '/assets/img/support-team.jpg';
 			<input type="tel" name="phone" placeholder="Số điện thoại *" required />
 			<input type="text" name="company" placeholder="Tên công ty" />
 			<select name="service"><option value="">Dịch vụ bạn quan tâm *</option><option>Tư vấn dụng cụ</option><option>Hỗ trợ kỹ thuật</option><option>Yêu cầu báo giá</option></select>
-			<button type="submit">Submit</button>
+			<button type="submit">Gửi ngay</button>
 		</form>
 	</div>
 </section>
