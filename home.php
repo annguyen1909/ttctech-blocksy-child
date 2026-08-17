@@ -25,12 +25,25 @@ $articles = new WP_Query([
 			<strong>Kiến thức kỹ thuật</strong>
 		</nav>
 
+		<?php $tabs = ttc_catalog_sidebar_items(); ?>
+		<nav class="ttc-knowledge-tabs" aria-label="Danh mục">
+			<a class="ttc-knowledge-tabs__item is-active" href="<?php echo esc_url(ttc_knowledge_url()); ?>">Tất cả</a>
+			<?php foreach ($tabs as $item) :
+				if (mb_stripos($item['label'], 'Tất cả') !== false) {
+					continue;
+				}
+				?>
+				<a class="ttc-knowledge-tabs__item" href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['label']); ?></a>
+			<?php endforeach; ?>
+		</nav>
+
 		<div class="ttc-knowledge__layout">
 			<div class="ttc-knowledge__main">
 				<?php if ($featured && $paged === 1) : ?>
 					<section class="ttc-knowledge-lead" aria-label="Bài viết nổi bật">
 						<a class="ttc-knowledge-lead__feature" href="<?php echo esc_url(get_permalink($featured)); ?>">
 							<img src="<?php echo esc_url(ttc_article_image($featured->ID, 'large')); ?>" alt="" width="820" height="440" fetchpriority="high" />
+							<span class="ttc-knowledge-lead__badge">Nổi bật</span>
 							<h1><?php echo esc_html(get_the_title($featured)); ?></h1>
 						</a>
 						<div class="ttc-knowledge-lead__secondary">

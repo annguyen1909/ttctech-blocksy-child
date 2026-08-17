@@ -47,6 +47,81 @@ function ttc_article_body(int $post_id): string {
 	);
 }
 
+function ttc_heading_anchor(string $text, array &$used): string {
+	$base = sanitize_title($text);
+	if ($base === '') {
+		$base = 'section';
+	}
+	$id = $base;
+	$n = 2;
+	while (isset($used[$id])) {
+		$id = $base . '-' . $n++;
+	}
+	$used[$id] = true;
+	return $id;
+}
+
+/**
+ * Inject heading IDs and build a numbered TOC (h2 / h3), matching Uno-Tech blog.
+ *
+ * @return array{html: string, items: array<int, array{id: string, text: string, level: int, num: string}>}
+ */
+function ttc_prepare_article_content(int $post_id): array {
+	$html = (string) apply_filters('the_content', ttc_article_body($post_id));
+	$used = [];
+	$items = [];
+	$h2 = 0;
+	$h3 = 0;
+
+	$html = (string) preg_replace_callback(
+		'/<h([23])(\b[^>]*)>(.*?)<\/h\1>/is',
+		static function ($match) use (&$used, &$items, &$h2, &$h3) {
+			$level = (int) $match[1];
+			$attrs = $match[2];
+			$inner = $match[3];
+			$text = trim(preg_replace('/\s+/u', ' ', wp_strip_all_tags($inner)));
+			if ($text === '') {
+				return $match[0];
+			}
+
+			$id = '';
+			if (preg_match('/\bid\s*=\s*([\'"])([^\'"]+)\1/i', $attrs, $id_match)) {
+				$id = sanitize_title($id_match[2]);
+			}
+			if ($id === '') {
+				$id = ttc_heading_anchor($text, $used);
+				$attrs .= ' id="' . esc_attr($id) . '"';
+			} else {
+				$used[$id] = true;
+			}
+
+			if ($level === 2) {
+				$h2++;
+				$h3 = 0;
+				$num = $h2 . '.';
+			} else {
+				$h3++;
+				$num = max(1, $h2) . '.' . $h3;
+			}
+
+			$items[] = [
+				'id' => $id,
+				'text' => $text,
+				'level' => $level,
+				'num' => $num,
+			];
+
+			return '<h' . $level . $attrs . '>' . $inner . '</h' . $level . '>';
+		},
+		$html
+	);
+
+	return [
+		'html' => $html,
+		'items' => $items,
+	];
+}
+
 function ttc_article_excerpt(int $post_id, int $words = 24): string {
 	// ponytail: always first real <p> in body — post_excerpt titles are inconsistent after import/translate.
 	$body = ttc_article_body($post_id);

@@ -56,6 +56,29 @@ add_action('acf/init', function () {
 		'style' => 'default',
 		'active' => true,
 	]);
+
+	acf_add_local_field_group([
+		'key' => 'group_ttc_brand_logo',
+		'title' => 'Logo thương hiệu',
+		'fields' => [[
+			'key' => 'field_ttc_brand_logo',
+			'label' => 'Logo',
+			'name' => 'ttc_brand_logo',
+			'type' => 'image',
+			'return_format' => 'array',
+			'preview_size' => 'medium',
+			'instructions' => 'Có logo = hiện trên homepage và bộ lọc shop. Xóa logo = ẩn thương hiệu.',
+		]],
+		'location' => [[
+			[
+				'param' => 'taxonomy',
+				'operator' => '==',
+				'value' => 'product_tag',
+			],
+		]],
+		'position' => 'normal',
+		'active' => true,
+	]);
 });
 
 /**

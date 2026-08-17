@@ -1,16 +1,9 @@
 <?php
 /**
- * Enqueue + replace Blocksy header/footer with TTCTECH chrome.
+ * Assets + Blocksy header/footer builder (customer-editable chrome).
  */
 
 add_action('wp_enqueue_scripts', function () {
-	wp_enqueue_style(
-		'blocksy-parent',
-		get_template_directory_uri() . '/style.css',
-		[],
-		null
-	);
-
 	wp_enqueue_style(
 		'ttc-fonts',
 		'https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap',
@@ -21,28 +14,17 @@ add_action('wp_enqueue_scripts', function () {
 	wp_enqueue_style(
 		'ttc-main',
 		TTC_THEME_URI . '/assets/css/ttc.css',
-		['blocksy-parent', 'ttc-fonts'],
-		TTC_THEME_VERSION
+		['ct-main-styles', 'ttc-fonts'],
+		filemtime(TTC_THEME_DIR . '/assets/css/ttc.css')
 	);
 
 	wp_enqueue_script(
 		'ttc-main',
 		TTC_THEME_URI . '/assets/js/ttc.js',
 		[],
-		TTC_THEME_VERSION,
+		filemtime(TTC_THEME_DIR . '/assets/js/ttc.js'),
 		true
 	);
-});
-
-add_filter('blocksy:builder:header:enabled', '__return_false');
-add_filter('blocksy:builder:footer:enabled', '__return_false');
-
-add_action('blocksy:header:before', function () {
-	get_template_part('template-parts/header');
-});
-
-add_action('blocksy:footer:before', function () {
-	get_template_part('template-parts/footer');
 });
 
 add_action('after_setup_theme', function () {

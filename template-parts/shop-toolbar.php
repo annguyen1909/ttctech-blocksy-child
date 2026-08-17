@@ -24,7 +24,7 @@ foreach (ttc_brand_catalog() as $b) {
 	}
 }
 
-$cats = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => true]);
+$cats = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => false]);
 $total = (int) wc_get_loop_prop('total');
 $showing = (int) $GLOBALS['wp_query']->post_count;
 ?>

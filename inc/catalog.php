@@ -30,6 +30,15 @@ add_action('woocommerce_single_product_summary', function () {
 	echo '<p class="ttc-single-contact"><a class="ttc-btn ttc-btn--primary" href="' . esc_url($contact) . '">Yêu cầu báo giá</a></p>';
 }, 30);
 
+add_filter('get_terms', function ($terms, $taxonomies) {
+	if (is_admin() || !in_array('product_cat', (array) $taxonomies, true) || !is_array($terms)) {
+		return $terms;
+	}
+	return array_values(array_filter($terms, static function ($term) {
+		return !($term instanceof WP_Term) || $term->slug !== 'uncategorized';
+	}));
+}, 10, 2);
+
 function ttc_contact_url() {
 	$page = get_page_by_path('lien-he');
 	return $page ? get_permalink($page) : home_url('/lien-he/');
@@ -40,29 +49,15 @@ function ttc_quote_url() {
 	return $page ? get_permalink($page) : ttc_contact_url();
 }
 
-/** Brand label from first matching product tag (known brands). */
+/** Brand label from first product tag that has a logo, else first tag. */
 function ttc_product_brand_name($product_id = 0) {
-	static $brands = null;
-	if ($brands === null) {
-		$brands = [
-			'Sandvik', 'Taegutec', 'Dasqua', 'Mahr', 'Guhring', 'OSG', 'Widin',
-			'YG', 'YG Tooling', 'ZCC', 'SEC', 'UFS', 'DURA', 'Dongsan',
-			'Jingchi tool', 'Niigataseiki', 'Samchully', 'Nine9', 'TTC',
-		];
+	$brand = ttc_brand_image_for_product($product_id);
+	if ($brand) {
+		return $brand['name'];
 	}
-
 	$tags = wp_get_post_terms($product_id ?: get_the_ID(), 'product_tag', ['fields' => 'names']);
 	if (is_wp_error($tags) || !$tags) {
 		return '';
 	}
-
-	foreach ($brands as $brand) {
-		foreach ($tags as $tag) {
-			if (strcasecmp($tag, $brand) === 0) {
-				return $tag;
-			}
-		}
-	}
-
 	return $tags[0];
 }

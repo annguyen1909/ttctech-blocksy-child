@@ -10,6 +10,8 @@ $types = [
 	['Phần mềm', 'phan-mem'],
 ];
 $hero = TTC_THEME_URI . '/assets/img/brand-hero-sandvik.png';
+$description = term_description($brand['term_id'], 'product_tag');
+$count = (int) ($GLOBALS['wp_query']->found_posts ?? 0);
 ?>
 <section class="ttc-brand-showcase">
 	<div class="ttc-brand-showcase__media" style="--ttc-brand-hero: url('<?php echo esc_url($hero); ?>')">
@@ -17,6 +19,9 @@ $hero = TTC_THEME_URI . '/assets/img/brand-hero-sandvik.png';
 			<img src="<?php echo esc_url($brand['img']); ?>" alt="<?php echo esc_attr($brand['name']); ?>" />
 		</span>
 	</div>
+	<?php if ($description) : ?>
+		<div class="ttc-brand-showcase__desc"><?php echo wp_kses_post($description); ?></div>
+	<?php endif; ?>
 	<form class="ttc-brand-showcase__types" method="get" action="<?php echo esc_url(home_url('/shop/')); ?>">
 		<input type="hidden" name="ttc_brand" value="<?php echo esc_attr($brand['slug']); ?>" />
 		<strong>Loại sản phẩm:</strong>
@@ -28,3 +33,9 @@ $hero = TTC_THEME_URI . '/assets/img/brand-hero-sandvik.png';
 		<?php endforeach; ?>
 	</form>
 </section>
+<div class="ttc-brand-showcase__catalog-head">
+	<h2>Danh mục dụng cụ</h2>
+	<?php if ($count) : ?>
+		<a href="<?php echo esc_url(add_query_arg('ttc_brand', $brand['slug'], home_url('/shop/'))); ?>">Tất cả (<?php echo $count; ?>)</a>
+	<?php endif; ?>
+</div>
