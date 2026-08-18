@@ -4971,6 +4971,17 @@ header#header {
 	box-shadow: 0 20px 44px -14px rgb(20 30 39 / 20%), 0 4px 14px rgb(20 30 39 / 6%);
 }
 
+/* Invisible bridge across the gap below the nav item so the panel stays open
+   while the pointer travels from the link down onto the list. */
+#header .ttc-nav__product > .sub-menu::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -14px;
+	height: 14px;
+}
+
 #header .ttc-nav__product > .sub-menu li {
 	border: 0;
 }

@@ -462,6 +462,7 @@ function ttc_make_custom_menu_item(array $props) {
 		'current_item_ancestor' => false,
 		'current_item_parent' => false,
 		'menu_order' => 0,
+		'post_parent' => 0,
 		'post_type' => 'nav_menu_item',
 		'post_status' => 'publish',
 		'status' => 'publish',
@@ -607,6 +608,41 @@ function ttc_builder_items_are_list($items) {
 	return false;
 }
 
+/**
+ * True when a Blocksy background still has the factory light/empty fill.
+ * Does not treat a client-chosen color as unset.
+ */
+function ttc_footer_background_is_unset($background) {
+	if (!is_array($background) || $background === []) {
+		return true;
+	}
+
+	if (isset($background['desktop'])) {
+		return ttc_footer_background_is_unset($background['desktop']);
+	}
+
+	$color = $background['backgroundColor']['default']['color'] ?? '';
+	if (!is_string($color) || $color === '') {
+		return true;
+	}
+
+	$color = strtolower(preg_replace('/\s+/', '', $color));
+	$blank = [
+		'ct_css_skip_rule',
+		'transparent',
+		'inherit',
+		'initial',
+		'#fff',
+		'#ffffff',
+		'#f8f9fb',
+		'var(--theme-palette-color-6)',
+		'var(--theme-palette-color-7)',
+		'var(--theme-palette-color-8)',
+	];
+
+	return in_array($color, $blank, true);
+}
+
 function ttc_normalize_footer_placements() {
 	if (!function_exists('blocksy_manager')) {
 		return;
@@ -622,6 +658,15 @@ function ttc_normalize_footer_placements() {
 	$changed = false;
 
 	foreach ($footer['sections'] as &$section) {
+		if (!isset($section['settings']) || !is_array($section['settings'])) {
+			$section['settings'] = [];
+		}
+
+		if (ttc_footer_background_is_unset($section['settings']['footerBackground'] ?? null)) {
+			$section['settings']['footerBackground'] = ttc_navy_background();
+			$changed = true;
+		}
+
 		$original = $section['items'] ?? [];
 		$items = ttc_key_builder_items($original);
 		$items_changed = ttc_builder_items_are_list($original);
