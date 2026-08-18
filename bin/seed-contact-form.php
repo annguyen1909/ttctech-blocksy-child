@@ -25,7 +25,7 @@ $form = $post ? WPCF7_ContactForm::get_instance($post->ID) : WPCF7_ContactForm::
 $mail = $form->prop('mail');
 $mail['subject'] = '[_site_title] Yêu cầu tư vấn từ [your-name]';
 $mail['sender'] = sprintf('[_site_title] <%s>', WPCF7_ContactFormTemplate::from_email());
-$mail['body'] = "Họ và tên: [your-name]\nEmail: [your-email]\nSố điện thoại: [phone]\nCông ty: [company]\nDịch vụ quan tâm: [service]\n\nNội dung yêu cầu:\n[your-message]\n\n--\nGửi từ [_site_title] ([_site_url])";
+$mail['body'] = "Họ và tên: [your-name]\nEmail: [your-email]\nSố điện thoại: [phone]\nCông ty: [company]\nDịch vụ quan tâm: [service]\n\n--\nGửi từ [_site_title] ([_site_url])";
 $mail['additional_headers'] = 'Reply-To: [your-email]';
 
 $messages = $form->prop('messages');
@@ -45,20 +45,17 @@ $form->set_title($title);
 $form->set_properties([
 	'form' => <<<'FORM'
 <div class="ttc-support__form-head">
-<p class="ttc-support__note">Cho chúng tôi biết nhu cầu của bạn để đội ngũ kỹ thuật tư vấn đúng giải pháp.</p>
-<p class="ttc-support__required"><span aria-hidden="true">*</span> Thông tin bắt buộc</p>
+<p class="ttc-support__note">Vui lòng điền đầy đủ thông tin để nhận được sự hỗ trợ nhanh nhất từ đội ngũ của chúng tôi.</p>
 </div>
 <div class="ttc-support__fields">
-<label class="ttc-support__field"><span>Họ và tên <b aria-hidden="true">*</b></span>[text* your-name autocomplete:name placeholder "Nguyễn Văn An"]</label>
-<label class="ttc-support__field"><span>Email <b aria-hidden="true">*</b></span>[email* your-email autocomplete:email placeholder "email@congty.vn"]</label>
-<label class="ttc-support__field"><span>Số điện thoại <b aria-hidden="true">*</b></span>[tel* phone autocomplete:tel placeholder "09xx xxx xxx"]</label>
-<label class="ttc-support__field"><span>Tên công ty</span>[text company autocomplete:organization placeholder "Công ty của bạn"]</label>
-<label class="ttc-support__field ttc-support__field--wide"><span>Dịch vụ quan tâm <b aria-hidden="true">*</b></span>[select* service first_as_label "Chọn dịch vụ" "Tư vấn dụng cụ" "Hỗ trợ kỹ thuật" "Yêu cầu báo giá"]</label>
-<label class="ttc-support__field ttc-support__field--wide"><span>Nội dung cần hỗ trợ</span>[textarea your-message maxlength:1000 x4 placeholder "Mô tả sản phẩm, thông số hoặc vấn đề bạn cần hỗ trợ..."]</label>
+<label class="ttc-support__field"><span class="screen-reader-text">Họ và tên</span>[text* your-name autocomplete:name placeholder "Họ và tên *"]</label>
+<label class="ttc-support__field"><span class="screen-reader-text">Email</span>[email* your-email autocomplete:email placeholder "Email *"]</label>
+<label class="ttc-support__field"><span class="screen-reader-text">Số điện thoại</span>[tel* phone autocomplete:tel placeholder "Số điện thoại *"]</label>
+<label class="ttc-support__field"><span class="screen-reader-text">Tên công ty</span>[text company autocomplete:organization placeholder "Tên công ty"]</label>
+<label class="ttc-support__field ttc-support__field--wide"><span class="screen-reader-text">Dịch vụ bạn quan tâm</span>[select* service first_as_label "Dịch vụ bạn quan tâm *" "Tư vấn dụng cụ" "Hỗ trợ kỹ thuật" "Yêu cầu báo giá"]</label>
 </div>
 <div class="ttc-support__actions">
-[submit class:ttc-support__submit "Gửi yêu cầu tư vấn"]
-<span class="ttc-support__privacy">Thông tin chỉ được dùng để phản hồi yêu cầu của bạn.</span>
+[submit class:ttc-support__submit "Submit"]
 </div>
 FORM,
 	'mail' => $mail,
