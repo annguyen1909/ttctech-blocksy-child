@@ -25,18 +25,6 @@ $articles = new WP_Query([
 			<strong>Kiến thức kỹ thuật</strong>
 		</nav>
 
-		<?php $tabs = ttc_catalog_sidebar_items(); ?>
-		<nav class="ttc-knowledge-tabs" aria-label="Danh mục">
-			<a class="ttc-knowledge-tabs__item is-active" href="<?php echo esc_url(ttc_knowledge_url()); ?>">Tất cả</a>
-			<?php foreach ($tabs as $item) :
-				if (mb_stripos($item['label'], 'Tất cả') !== false) {
-					continue;
-				}
-				?>
-				<a class="ttc-knowledge-tabs__item" href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['label']); ?></a>
-			<?php endforeach; ?>
-		</nav>
-
 		<div class="ttc-knowledge__layout">
 			<div class="ttc-knowledge__main">
 				<?php if ($featured && $paged === 1) : ?>
