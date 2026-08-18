@@ -4833,7 +4833,8 @@ body.page-id-904 #main {
 /* Drop the empty <p> that wpautop injects around the [ttc_support_form]
    shortcode block when the band renders via do_shortcode(do_blocks()) on shop
    pages — otherwise those empties take grid cells and push the form to column 1. */
-.ttc-support__inner > p:empty { display: none; }
+.ttc-support__inner > p { display: none; }  /* khong dung :empty — the <p> do
+   wpautop sinh ra co chua ky tu xuong dong nen :empty khong bao gio khop */
 
 @media (min-width: 769px) {
 	.ttc-support:not(.wp-block-cover) {
