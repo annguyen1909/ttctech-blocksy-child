@@ -168,3 +168,65 @@
 		}
 	}
 })();
+
+(() => {
+	const applySelect = () => document.querySelector('#ung-tuyen select[name="position"]');
+	const genericOption = "Ứng tuyển chủ động (vị trí khác)";
+
+	const pickPosition = (anchor) => {
+		const field = applySelect();
+		if (!field) return;
+		const title = anchor.closest(".ttc-careers__job")?.querySelector("h3")?.textContent?.trim();
+		const match = title && [...field.options].find((option) => option.value === title);
+		field.value = match ? title : genericOption;
+	};
+
+	document.querySelectorAll('a[href="#ung-tuyen"]').forEach((anchor) => {
+		anchor.addEventListener("click", (event) => {
+			const target = document.getElementById("ung-tuyen");
+			if (!target) return;
+			event.preventDefault();
+			pickPosition(anchor);
+			target.scrollIntoView({ behavior: "smooth", block: "start" });
+			if (location.hash !== "#ung-tuyen") {
+				history.pushState(null, "", "#ung-tuyen");
+			}
+		});
+	});
+
+	if (location.hash === "#ung-tuyen") {
+		pickPosition(document.querySelector(".ttc-careers a[href='#ung-tuyen']") || document.body);
+	}
+})();
+
+(() => {
+	if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+	document.querySelectorAll(".ttc-faq-list details").forEach((details) => {
+		const summary = details.querySelector("summary");
+		if (!summary || typeof details.animate !== "function") return;
+
+		let animation;
+		summary.addEventListener("click", (event) => {
+			event.preventDefault();
+			animation?.finish();
+
+			const opening = !details.open;
+			const startHeight = details.offsetHeight;
+			details.open = opening;
+			const endHeight = details.offsetHeight;
+			if (!opening) details.open = true;
+
+			details.style.overflow = "hidden";
+			animation = details.animate(
+				{ height: [`${startHeight}px`, `${endHeight}px`] },
+				{ duration: 260, easing: "ease-out" }
+			);
+			animation.onfinish = () => {
+				details.open = opening;
+				details.style.overflow = "";
+				animation = undefined;
+			};
+		});
+	});
+})();

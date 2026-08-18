@@ -3680,13 +3680,17 @@ body.page-id-906 #main {
 	background: #fff;
 }
 
+.ttc-careers > .wp-block-group {
+	margin-block: 0 !important;
+}
+
 .ttc-careers .wp-block-heading,
 .ttc-careers p {
 	margin-block-start: 0;
 }
 
 .ttc-careers__hero {
-	padding: 4.5rem 1.25rem !important;
+	padding: 4.5rem 1.25rem 2.75rem !important;
 	background: linear-gradient(135deg, #f4f9fc, #fff 70%);
 	max-width: none !important;
 }
@@ -3720,6 +3724,9 @@ body.page-id-906 #main {
 .ttc-careers h2,
 .ttc-careers h3,
 .ttc-careers .wp-block-heading { color: var(--ttc-text) !important; }
+
+/* Band ứng tuyển [ttc_apply_form] trên nền navy tối: màu chữ trắng + reset
+   layout của band được xử lý tập trung ở khối ".ttc-careers .ttc-support" cuối file. */
 
 .ttc-careers__hero h1,
 .ttc-careers__hero .wp-block-heading {
@@ -3764,12 +3771,6 @@ body.page-id-906 #main {
 	box-shadow: 0 22px 50px rgb(0 29 61 / 14%);
 }
 
-.ttc-careers__culture {
-	padding: 5rem 1.25rem;
-	max-width: var(--ttc-container, 1280px) !important;
-	margin-inline: auto;
-}
-
 .ttc-careers__section-heading {
 	display: grid;
 	grid-template-columns: 1fr 1.2fr;
@@ -3792,45 +3793,9 @@ body.page-id-906 #main {
 	line-height: 1.65;
 }
 
-.ttc-careers__values.wp-block-columns {
-	display: grid !important;
-	grid-template-columns: repeat(3, minmax(0, 1fr));
-	gap: 0 !important;
-	border-block: 1px solid var(--ttc-line);
-}
-
-.ttc-careers__values .wp-block-column {
-	padding: 2rem;
-	border-right: 1px solid var(--ttc-line);
-}
-
-.ttc-careers__values .wp-block-column:first-child { padding-left: 0; }
-.ttc-careers__values .wp-block-column:last-child { padding-right: 0; border-right: 0; }
-
-.ttc-careers__value-num {
-	margin: 0 !important;
-	color: var(--ttc-navy) !important;
-	font-size: 0.72rem !important;
-	font-weight: 700 !important;
-}
-
-.ttc-careers__value h3,
-.ttc-careers__values h3 {
-	margin: 1.5rem 0 0.6rem !important;
-	font-size: 1rem !important;
-}
-
-.ttc-careers__value p:not(.ttc-careers__value-num),
-.ttc-careers__values .wp-block-column > .ttc-careers__value > p:not(.ttc-careers__value-num) {
-	margin: 0 !important;
-	color: var(--ttc-muted) !important;
-	font-size: 0.85rem;
-	line-height: 1.65;
-}
-
 .ttc-careers__openings {
-	padding: 4rem 1.25rem;
-	background: var(--ttc-bg);
+	padding: 2rem 1.25rem 4.5rem;
+	background: #fff;
 	max-width: none !important;
 }
 
@@ -3841,15 +3806,22 @@ body.page-id-906 #main {
 }
 
 .ttc-careers__openings-head {
-	gap: 2rem;
-	margin-bottom: 2rem;
+	margin-bottom: 1.75rem;
 	width: 100%;
+	max-width: 40rem;
 }
 
-.ttc-careers__openings h2,
-.ttc-careers__openings .wp-block-heading {
+.ttc-careers__openings-head h2,
+.ttc-careers__openings-head .wp-block-heading {
 	margin: 0 !important;
-	font-size: clamp(1.5rem, 2.5vw, 2rem) !important;
+	font-size: clamp(1.8rem, 3vw, 2.6rem) !important;
+}
+
+.ttc-careers__openings-head p:not(.ttc-careers__eyebrow) {
+	max-width: 36rem;
+	margin: 0.7rem 0 0 !important;
+	color: var(--ttc-muted) !important;
+	line-height: 1.65;
 }
 
 .ttc-careers__jobs { display: grid; gap: 1rem; }
@@ -3857,10 +3829,20 @@ body.page-id-906 #main {
 .ttc-careers__job {
 	gap: 1rem 2rem;
 	width: 100%;
-	padding: 1.25rem 1.5rem;
+	margin: 0 !important;
+	padding: 1.5rem 1.75rem;
 	border: 1px solid var(--ttc-line);
-	border-radius: 10px;
+	border-radius: 16px;
 	background: #fff;
+	box-shadow: 0 10px 30px -24px rgb(0 29 61 / 45%);
+	transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+.ttc-careers__job .wp-block-buttons {
+	flex: none;
+}
+.ttc-careers__job:hover {
+	border-color: rgb(0 102 153 / 35%);
+	box-shadow: 0 16px 36px -22px rgb(0 29 61 / 42%);
 }
 
 .ttc-careers__job h3,
@@ -3887,28 +3869,21 @@ body.page-id-906 #main {
 @media (max-width: 1024px) {
 	.ttc-careers__hero > .wp-block-columns,
 	.ttc-careers__hero-grid {
-		grid-template-columns: 1fr !important;
+		grid-template-columns: minmax(0, 1fr) !important;
 		flex-direction: column !important;
 	}
-	.ttc-careers__section-heading,
-	.ttc-careers__values.wp-block-columns { grid-template-columns: 1fr !important; }
-	.ttc-careers__values .wp-block-column {
-		padding: 1.5rem 0;
-		border-right: 0;
-		border-bottom: 1px solid var(--ttc-line);
-	}
-	.ttc-careers__values .wp-block-column:last-child { border-bottom: 0; }
+	.ttc-careers__hero-copy,
+	.ttc-careers__hero-image { min-width: 0; max-width: 100%; }
+	.ttc-careers__section-heading { grid-template-columns: 1fr !important; }
 	.ttc-careers__hero-image,
-	.ttc-careers__hero-image img { min-height: 0; aspect-ratio: 4 / 3; }
+	.ttc-careers__hero-image img { min-height: 0; max-width: 100%; aspect-ratio: 4 / 3; }
 }
 
 @media (max-width: 768px) {
 	.ttc-careers__hero { padding: 2.5rem 1rem 3rem !important; }
-	.ttc-careers__actions,
-	.ttc-careers__openings-head { flex-direction: column; align-items: flex-start; }
+	.ttc-careers__actions { flex-direction: column; align-items: flex-start; }
 	.ttc-careers__job { flex-direction: column; }
-	.ttc-careers__culture { padding-block: 3rem; }
-	.ttc-careers__openings { padding: 3rem 1rem; }
+	.ttc-careers__openings { padding: 2.5rem 1rem 3rem; }
 }
 
 /* —— Marketing homepage (Gutenberg page content) —— */

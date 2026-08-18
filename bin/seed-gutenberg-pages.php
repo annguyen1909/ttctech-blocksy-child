@@ -79,7 +79,7 @@ ob_start();
 <!-- wp:buttons {"className":"ttc-careers__actions"} -->
 <div class="wp-block-buttons ttc-careers__actions">
 <!-- wp:button {"className":"ttc-btn ttc-btn--primary is-style-fill"} -->
-<div class="wp-block-button ttc-btn ttc-btn--primary is-style-fill"><a class="wp-block-button__link wp-element-button" href="mailto:info@ttctech.vn?subject=%E1%BB%A8ng%20tuy%E1%BB%83n%20t%E1%BA%A1i%20TTCTECH">Gửi hồ sơ ứng tuyển</a></div>
+<div class="wp-block-button ttc-btn ttc-btn--primary is-style-fill"><a class="wp-block-button__link wp-element-button" href="#ung-tuyen">Gửi hồ sơ ứng tuyển</a></div>
 <!-- /wp:button -->
 
 <!-- wp:button {"className":"ttc-careers__contact is-style-outline"} -->
@@ -105,89 +105,11 @@ ob_start();
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"ttc-careers__culture ttc-container","layout":{"type":"constrained","contentSize":"1280px"}} -->
-<div class="wp-block-group ttc-careers__culture ttc-container">
-
-<!-- wp:group {"className":"ttc-careers__section-heading","layout":{"type":"default"}} -->
-<div class="wp-block-group ttc-careers__section-heading">
-<!-- wp:paragraph {"className":"ttc-careers__eyebrow"} -->
-<p class="ttc-careers__eyebrow">Làm việc tại TTCTECH</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Nơi chuyên môn tạo ra giá trị</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>Mỗi thành viên được khuyến khích hiểu sâu vấn đề, phối hợp thẳng thắn và theo đuổi giải pháp phù hợp nhất cho khách hàng.</p>
-<!-- /wp:paragraph -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:columns {"className":"ttc-careers__values"} -->
-<div class="wp-block-columns ttc-careers__values">
-<!-- wp:column -->
-<div class="wp-block-column">
-<!-- wp:group {"className":"ttc-careers__value","layout":{"type":"default"}} -->
-<div class="wp-block-group ttc-careers__value">
-<!-- wp:paragraph {"className":"ttc-careers__value-num"} -->
-<p class="ttc-careers__value-num">01</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Gắn với thực tế</h3>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>Công việc tập trung vào nhu cầu thật trong sản xuất và gia công cơ khí.</p>
-<!-- /wp:paragraph -->
-</div>
-<!-- /wp:group -->
-</div>
-<!-- /wp:column -->
-<!-- wp:column -->
-<div class="wp-block-column">
-<!-- wp:group {"className":"ttc-careers__value","layout":{"type":"default"}} -->
-<div class="wp-block-group ttc-careers__value">
-<!-- wp:paragraph {"className":"ttc-careers__value-num"} -->
-<p class="ttc-careers__value-num">02</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Học hỏi liên tục</h3>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>Cùng cập nhật kiến thức sản phẩm, công nghệ và phương pháp làm việc hiệu quả.</p>
-<!-- /wp:paragraph -->
-</div>
-<!-- /wp:group -->
-</div>
-<!-- /wp:column -->
-<!-- wp:column -->
-<div class="wp-block-column">
-<!-- wp:group {"className":"ttc-careers__value","layout":{"type":"default"}} -->
-<div class="wp-block-group ttc-careers__value">
-<!-- wp:paragraph {"className":"ttc-careers__value-num"} -->
-<p class="ttc-careers__value-num">03</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Phối hợp rõ ràng</h3>
-<!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>Trao đổi trực tiếp, tôn trọng chuyên môn và cùng chịu trách nhiệm về kết quả.</p>
-<!-- /wp:paragraph -->
-</div>
-<!-- /wp:group -->
-</div>
-<!-- /wp:column -->
-</div>
-<!-- /wp:columns -->
-
-</div>
-<!-- /wp:group -->
-
 <!-- wp:group {"className":"ttc-careers__openings","layout":{"type":"constrained","contentSize":"1280px"}} -->
 <div class="wp-block-group ttc-careers__openings">
 
-<!-- wp:group {"className":"ttc-careers__openings-head","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"bottom"}} -->
+<!-- wp:group {"className":"ttc-careers__openings-head","layout":{"type":"default"}} -->
 <div class="wp-block-group ttc-careers__openings-head">
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
 <!-- wp:paragraph {"className":"ttc-careers__eyebrow"} -->
 <p class="ttc-careers__eyebrow">Vị trí đang tuyển</p>
 <!-- /wp:paragraph -->
@@ -195,17 +117,8 @@ ob_start();
 <h2 class="wp-block-heading">Cơ hội hợp tác cùng TTCTECH</h2>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
-<p>Chọn vị trí phù hợp hoặc gửi hồ sơ chủ động — chúng tôi sẽ liên hệ khi có matching.</p>
+<p>Chọn vị trí phù hợp hoặc gửi hồ sơ chủ động. TTCTECH sẽ liên hệ khi hồ sơ phù hợp.</p>
 <!-- /wp:paragraph -->
-</div>
-<!-- /wp:group -->
-<!-- wp:buttons -->
-<div class="wp-block-buttons">
-<!-- wp:button {"className":"ttc-btn ttc-btn--primary is-style-fill"} -->
-<div class="wp-block-button ttc-btn ttc-btn--primary is-style-fill"><a class="wp-block-button__link wp-element-button" href="mailto:info@ttctech.vn?subject=H%E1%BB%93%20s%C6%A1%20%E1%BB%A9ng%20tuy%E1%BB%83n%20ch%E1%BB%A7%20%C4%91%E1%BB%99ng">Gửi hồ sơ chủ động</a></div>
-<!-- /wp:button -->
-</div>
-<!-- /wp:buttons -->
 </div>
 <!-- /wp:group -->
 
@@ -214,23 +127,30 @@ ob_start();
 
 <!-- wp:group {"className":"ttc-careers__job","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group ttc-careers__job">
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
+<!-- wp:group {"className":"ttc-careers__job-main","layout":{"type":"constrained"}} -->
+<div class="wp-block-group ttc-careers__job-main">
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Kỹ sư ứng dụng dụng cụ cắt</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
 <p>Tư vấn giải pháp dao cụ tại hiện trường, hỗ trợ khách hàng tối ưu thông số cắt và quy trình gia công.</p>
 <!-- /wp:paragraph -->
-<!-- wp:paragraph {"className":"ttc-careers__job-meta"} -->
-<p class="ttc-careers__job-meta">Toàn thời gian · TP. Hồ Chí Minh</p>
+<!-- wp:group {"className":"ttc-careers__job-tags","layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-group ttc-careers__job-tags">
+<!-- wp:paragraph {"className":"ttc-careers__chip ttc-careers__chip--type"} -->
+<p class="ttc-careers__chip ttc-careers__chip--type">Toàn thời gian</p>
 <!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"ttc-careers__chip ttc-careers__chip--place"} -->
+<p class="ttc-careers__chip ttc-careers__chip--place">Hà Nội</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"className":"ttc-btn ttc-btn--primary is-style-fill"} -->
-<div class="wp-block-button ttc-btn ttc-btn--primary is-style-fill"><a class="wp-block-button__link wp-element-button" href="mailto:info@ttctech.vn?subject=%E1%BB%A8ng%20tuy%E1%BB%83n%20K%E1%BB%B9%20s%C6%B0%20%E1%BB%A9ng%20d%E1%BB%A5ng">Ứng tuyển</a></div>
+<div class="wp-block-button ttc-btn ttc-btn--primary is-style-fill"><a class="wp-block-button__link wp-element-button" href="#ung-tuyen">Ứng tuyển</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
@@ -239,23 +159,30 @@ ob_start();
 
 <!-- wp:group {"className":"ttc-careers__job","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
 <div class="wp-block-group ttc-careers__job">
-<!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
+<!-- wp:group {"className":"ttc-careers__job-main","layout":{"type":"constrained"}} -->
+<div class="wp-block-group ttc-careers__job-main">
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Nhân viên kinh doanh kỹ thuật</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
 <p>Phát triển khách hàng doanh nghiệp, phối hợp kỹ thuật để đề xuất giải pháp và theo dõi đơn hàng.</p>
 <!-- /wp:paragraph -->
-<!-- wp:paragraph {"className":"ttc-careers__job-meta"} -->
-<p class="ttc-careers__job-meta">Toàn thời gian · Hà Nội / HCM</p>
+<!-- wp:group {"className":"ttc-careers__job-tags","layout":{"type":"flex","flexWrap":"wrap"}} -->
+<div class="wp-block-group ttc-careers__job-tags">
+<!-- wp:paragraph {"className":"ttc-careers__chip ttc-careers__chip--type"} -->
+<p class="ttc-careers__chip ttc-careers__chip--type">Toàn thời gian</p>
 <!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"ttc-careers__chip ttc-careers__chip--place"} -->
+<p class="ttc-careers__chip ttc-careers__chip--place">Hà Nội / HCM</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 <!-- wp:button {"className":"ttc-btn ttc-btn--primary is-style-fill"} -->
-<div class="wp-block-button ttc-btn ttc-btn--primary is-style-fill"><a class="wp-block-button__link wp-element-button" href="mailto:info@ttctech.vn?subject=%E1%BB%A8ng%20tuy%E1%BB%83n%20Kinh%20doanh%20k%E1%BB%B9%20thu%E1%BA%ADt">Ứng tuyển</a></div>
+<div class="wp-block-button ttc-btn ttc-btn--primary is-style-fill"><a class="wp-block-button__link wp-element-button" href="#ung-tuyen">Ứng tuyển</a></div>
 <!-- /wp:button -->
 </div>
 <!-- /wp:buttons -->
@@ -265,6 +192,96 @@ ob_start();
 </div>
 <!-- /wp:group -->
 
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"ttc-careers__perks","layout":{"type":"constrained","contentSize":"1280px"}} -->
+<div class="wp-block-group ttc-careers__perks">
+
+<!-- wp:group {"className":"ttc-careers__section-heading","layout":{"type":"default"}} -->
+<div class="wp-block-group ttc-careers__section-heading">
+<!-- wp:paragraph {"className":"ttc-careers__eyebrow"} -->
+<p class="ttc-careers__eyebrow">Quyền lợi</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Chúng tôi chăm lo cho đội ngũ</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Môi trường để bạn làm nghề nghiêm túc, phát triển bền vững và được ghi nhận xứng đáng.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:columns {"className":"ttc-careers__perk-cards"} -->
+<div class="wp-block-columns ttc-careers__perk-cards">
+<!-- wp:column {"className":"ttc-careers__perk"} -->
+<div class="wp-block-column ttc-careers__perk">
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Thu nhập cạnh tranh</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Lương thỏa thuận theo năng lực, thưởng theo kết quả kinh doanh và hiệu quả công việc.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"className":"ttc-careers__perk"} -->
+<div class="wp-block-column ttc-careers__perk">
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Đào tạo chuyên môn</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Được đào tạo sản phẩm, công nghệ gia công và kỹ năng làm việc trực tiếp với hãng.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"className":"ttc-careers__perk"} -->
+<div class="wp-block-column ttc-careers__perk">
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Chế độ đầy đủ</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>BHXH, BHYT theo quy định, nghỉ phép, chế độ ngày lễ và chính sách phúc lợi rõ ràng.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column {"className":"ttc-careers__perk"} -->
+<div class="wp-block-column ttc-careers__perk">
+<!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading">Lộ trình phát triển</h3>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Cơ hội thăng tiến theo chuyên môn kỹ thuật hoặc phát triển kinh doanh dài hạn.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"anchor":"ung-tuyen","className":"ttc-support ttc-careers__apply","layout":{"type":"default"}} -->
+<div class="wp-block-group ttc-support ttc-careers__apply" id="ung-tuyen">
+<!-- wp:group {"className":"ttc-container ttc-support__inner","layout":{"type":"default"}} -->
+<div class="wp-block-group ttc-container ttc-support__inner">
+<!-- wp:group {"className":"ttc-support__copy","layout":{"type":"default"}} -->
+<div class="wp-block-group ttc-support__copy">
+<!-- wp:heading {"level":2} -->
+<h2 class="wp-block-heading">Nộp hồ sơ ứng tuyển</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph -->
+<p>Chọn vị trí đang mở ở trên, hoặc ứng tuyển chủ động nếu chưa thấy vị trí phù hợp.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"ttc-support__phone"} -->
+<p class="ttc-support__phone">Hotline: [ttc_phone]</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+<!-- wp:shortcode -->
+[ttc_apply_form]
+<!-- /wp:shortcode -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
 
@@ -613,8 +630,12 @@ $home = ob_get_clean();
 
 $home_id = (int) get_option('page_on_front') ?: 930;
 $careers_id = 906;
+$pages = [$home_id => $home, $careers_id => $careers];
+if (getenv('TTC_SEED_PAGES') === 'careers') {
+	$pages = [$careers_id => $careers];
+}
 
-foreach ([$home_id => $home, $careers_id => $careers] as $id => $content) {
+foreach ($pages as $id => $content) {
 	$result = wp_update_post(['ID' => $id, 'post_content' => $content], true);
 	if (is_wp_error($result)) {
 		WP_CLI::error("#{$id}: " . $result->get_error_message());
