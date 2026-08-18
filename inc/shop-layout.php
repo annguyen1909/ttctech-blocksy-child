@@ -15,11 +15,9 @@ add_action('woocommerce_after_main_content', function () {
 		return;
 	}
 
-	if (is_shop()) {
-		get_template_part('template-parts/shop', 'featured');
-		get_template_part('template-parts/shop', 'blog');
-		get_template_part('template-parts/shop', 'support');
-	}
+	get_template_part('template-parts/shop', 'featured');
+	get_template_part('template-parts/shop', 'blog');
+	get_template_part('template-parts/shop', 'support');
 
 	echo '</div>';
 }, 50);

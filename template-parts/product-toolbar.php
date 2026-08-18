@@ -46,7 +46,7 @@ $primary_category = !is_wp_error($primary_category) && $primary_category
 			<select name="ttc_type" onchange="this.form.submit()">
 				<option value="">Loại công cụ</option>
 				<?php
-				$terms = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => false]);
+				$terms = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => false, 'parent' => 0]);
 				if (!is_wp_error($terms)) :
 					foreach ($terms as $term) :
 						if ($term->slug === 'uncategorized') {

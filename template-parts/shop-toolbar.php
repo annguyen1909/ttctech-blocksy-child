@@ -24,9 +24,15 @@ foreach (ttc_brand_catalog() as $b) {
 	}
 }
 
-$cats = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => false]);
+$cats = get_terms(['taxonomy' => 'product_cat', 'hide_empty' => false, 'parent' => 0]);
 $total = (int) wc_get_loop_prop('total');
 $showing = (int) $GLOBALS['wp_query']->post_count;
+
+/* Trên trang lưu trữ danh mục sản phẩm, tiêu đề phải là tên danh mục đó — nếu để
+   tiêu đề chung thì bấm "Dụng cụ cắt" từ menu sẽ trông như vào sai trang. */
+$cat_term = is_tax('product_cat') ? get_queried_object() : null;
+$cat_name = ($cat_term && !is_wp_error($cat_term) && isset($cat_term->name)) ? $cat_term->name : '';
+$page_title = $cat_name !== '' ? $cat_name : 'Tất cả sản phẩm';
 ?>
 <div class="ttc-shop-hero">
 	<nav class="ttc-breadcrumb" aria-label="Đường dẫn">
@@ -36,6 +42,10 @@ $showing = (int) $GLOBALS['wp_query']->post_count;
 			<a href="<?php echo esc_url($shop_url); ?>">Sản phẩm</a>
 			<span>/</span>
 			<span><?php echo esc_html($selected_brand['label'] ?? strtoupper($selected_brand['name'])); ?></span>
+		<?php elseif ($cat_name !== '') : ?>
+			<a href="<?php echo esc_url($shop_url); ?>">Sản phẩm</a>
+			<span>/</span>
+			<span><?php echo esc_html($cat_name); ?></span>
 		<?php else : ?>
 			<span>Tất cả sản phẩm</span>
 		<?php endif; ?>
@@ -43,7 +53,7 @@ $showing = (int) $GLOBALS['wp_query']->post_count;
 
 	<?php if (!$selected_brand) : ?>
 		<div class="ttc-shop-hero__row">
-			<h1 class="ttc-shop-title">Tất cả sản phẩm</h1>
+			<h1 class="ttc-shop-title"><?php echo esc_html($page_title); ?></h1>
 			<div class="ttc-shop-hero__aside">
 				<?php woocommerce_catalog_ordering(); ?>
 				<p class="ttc-results-count">
