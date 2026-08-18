@@ -34,3 +34,10 @@ add_action('after_setup_theme', function () {
 		'ttc_footer_support' => 'TTCTECH Footer Support',
 	]);
 });
+
+add_filter('body_class', function (array $classes): array {
+	if (is_page('lien-he')) {
+		$classes[] = 'ttc-contact-page';
+	}
+	return $classes;
+});

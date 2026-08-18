@@ -4700,6 +4700,23 @@ body.home .ttc-support {
 }
 .ttc-content-page .ttc-support__form p { color: var(--ttc-muted); }
 
+/* Contact page backdrop. Not `fixed`: a fixed layer is sized to the viewport,
+   so once the card grows past one screen the image stops and the band below it
+   falls back to bare gradient — the card then straddles two different
+   backgrounds. `scroll` lets `cover` size against the element instead. */
+.ttc-contact-page .site-main {
+	padding: clamp(2rem, 5vw, 4rem) 1rem;
+	background: linear-gradient(rgb(0 29 61 / 72%), rgb(0 29 61 / 72%)), url("../img/support-team.jpg") center / cover no-repeat;
+}
+.ttc-contact-page .ttc-content-page {
+	padding: clamp(2rem, 5vw, 4rem) clamp(1.25rem, 4vw, 3.5rem);
+	background: rgb(255 255 255 / 94%);
+	border: 1px solid rgb(255 255 255 / 45%);
+	border-radius: 16px;
+	box-shadow: 0 24px 60px -30px rgb(0 15 32 / 70%);
+}
+
+
 /* Gutenberg Cover blocks (hero, support, FAQ) on the homepage/FAQ page */
 .ttc-home-hero.wp-block-cover {
 	display: flex !important;
