@@ -5112,3 +5112,463 @@ footer#footer {
 		background: #fff;
 	}
 }
+
+/* ============================================================
+   Trang Giới thiệu (About) — landing đầy đủ
+   ============================================================ */
+.ttc-page:has(.ttc-about) { padding: 0; max-width: none; width: 100%; }
+
+.ttc-about { background: #fff; }
+.ttc-about .wp-block-heading,
+.ttc-about p { margin-block-start: 0; }
+.ttc-about h1,
+.ttc-about h2,
+.ttc-about h3,
+.ttc-about .wp-block-heading { color: var(--ttc-text) !important; }
+
+/* Band [ttc_support] nhúng trong .ttc-about nằm trên nền navy tối — giữ chữ trắng
+   của chính band, KHÔNG để rule tiêu đề .ttc-about ở trên đè thành đen (chìm nền). */
+.ttc-about .ttc-support :is(h1, h2, h3),
+.ttc-about .ttc-support .wp-block-heading { color: #fff !important; }
+
+.ttc-about__eyebrow {
+	margin: 0 0 0.75rem !important;
+	color: var(--ttc-navy) !important;
+	font-size: 0.72rem !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+/* —— Hero —— */
+.ttc-about__hero {
+	padding: 4.75rem 1.25rem 6rem !important;
+	background: linear-gradient(135deg, #f4f9fc, #fff 70%);
+	max-width: none !important;
+}
+.ttc-about__hero-grid {
+	max-width: var(--ttc-container, 1280px);
+	margin-inline: auto;
+	display: grid !important;
+	grid-template-columns: minmax(0, 0.9fr) minmax(340px, 1.1fr);
+	align-items: center;
+	gap: 3rem 4.5rem !important;
+	flex-wrap: nowrap !important;
+}
+.ttc-about__hero-copy { max-width: 560px; }
+.ttc-about__hero-copy h1,
+.ttc-about__hero-copy .wp-block-heading {
+	margin: 0 !important;
+	font-size: clamp(2.1rem, 4vw, 3.4rem) !important;
+	font-weight: 600 !important;
+	letter-spacing: -0.055em;
+	line-height: 1.08 !important;
+}
+.ttc-about__hero-copy > p:not(.ttc-about__eyebrow) {
+	max-width: 520px;
+	margin: 1.5rem 0 0 !important;
+	color: var(--ttc-muted) !important;
+	line-height: 1.7;
+}
+.ttc-about__hero-actions { gap: 1rem; margin-top: 2rem; }
+.ttc-about__hero-link .wp-block-button__link {
+	background: transparent !important;
+	color: var(--ttc-navy) !important;
+	border: 1px solid var(--ttc-line) !important;
+	border-radius: 4px;
+	font-weight: 700;
+	font-size: 0.88rem;
+	padding: 0.65rem 1.2rem;
+	min-height: 0;
+}
+.ttc-about__hero-link .wp-block-button__link:hover {
+	border-color: var(--ttc-navy) !important;
+	background: rgb(0 102 153 / 6%) !important;
+	color: var(--ttc-navy) !important;
+}
+.ttc-about__hero-image { margin: 0; }
+.ttc-about__hero-image img {
+	display: block;
+	width: 100%;
+	min-height: 420px;
+	border-radius: 12px;
+	object-fit: cover;
+	box-shadow: 0 22px 50px rgb(0 29 61 / 16%);
+}
+
+/* —— Stats band (thẻ nổi chồng lên hero) —— */
+.ttc-about__stats-band {
+	position: relative;
+	z-index: 2;
+	max-width: none !important;
+	margin-top: -3rem;
+	padding: 0 1.25rem;
+}
+.ttc-about__stats {
+	max-width: var(--ttc-container, 1280px);
+	margin: 0 auto !important;
+}
+.ttc-about__stats.wp-block-columns {
+	display: grid !important;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 0 !important;
+	background: #fff;
+	border: 1px solid var(--ttc-line);
+	border-radius: 14px;
+	box-shadow: 0 20px 44px -26px rgb(0 29 61 / 40%);
+	overflow: hidden;
+}
+.ttc-about__stat.wp-block-column {
+	margin: 0 !important;
+	padding: 1.75rem 2rem;
+	border-right: 1px solid var(--ttc-line);
+}
+.ttc-about__stat:last-child { border-right: 0; }
+.ttc-about__stat-num {
+	margin: 0 !important;
+	color: var(--ttc-navy) !important;
+	font-size: clamp(1.5rem, 2.4vw, 2.1rem) !important;
+	font-weight: 700 !important;
+	letter-spacing: -0.03em;
+	line-height: 1.1;
+}
+.ttc-about__stat-label {
+	margin: 0.4rem 0 0 !important;
+	color: var(--ttc-muted) !important;
+	font-size: 0.82rem !important;
+	line-height: 1.4;
+}
+
+/* —— Story —— */
+.ttc-about__story {
+	padding: 4.75rem 1.25rem !important;
+	max-width: none !important;
+}
+.ttc-about__story-grid {
+	max-width: var(--ttc-container, 1280px);
+	margin-inline: auto;
+	display: grid !important;
+	grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+	align-items: center;
+	gap: 3rem 4rem !important;
+	flex-wrap: nowrap !important;
+}
+.ttc-about__story-image { margin: 0; }
+.ttc-about__story-image img {
+	display: block;
+	width: 100%;
+	min-height: 400px;
+	border-radius: 12px;
+	object-fit: cover;
+	box-shadow: 0 18px 40px rgb(0 29 61 / 14%);
+}
+.ttc-about__story-copy h2,
+.ttc-about__story-copy .wp-block-heading {
+	margin: 0.5rem 0 0 !important;
+	font-size: clamp(1.7rem, 2.6vw, 2.3rem) !important;
+	font-weight: 700 !important;
+	letter-spacing: -0.03em;
+	line-height: 1.18 !important;
+}
+.ttc-about__story-copy > p:not(.ttc-about__eyebrow) {
+	margin: 1.25rem 0 0 !important;
+	color: var(--ttc-muted) !important;
+	line-height: 1.75;
+}
+
+/* —— Sứ mệnh & Tầm nhìn —— */
+.ttc-about__mv {
+	padding: 0 1.25rem 4.75rem !important;
+	max-width: none !important;
+}
+.ttc-about__mv-grid {
+	max-width: var(--ttc-container, 1280px);
+	margin-inline: auto;
+	display: grid !important;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.5rem !important;
+}
+.ttc-about__mv-card.wp-block-column {
+	margin: 0 !important;
+	padding: 2.25rem;
+	border: 1px solid var(--ttc-line);
+	border-radius: 16px;
+	background: #fff;
+}
+.ttc-about__mv-card--mission { background: linear-gradient(180deg, #f4f9fc, #fff 65%); }
+.ttc-about__mv-card::before {
+	content: "";
+	display: block;
+	width: 52px;
+	height: 52px;
+	margin-bottom: 1.35rem;
+	border-radius: 13px;
+	background: rgb(0 102 153 / 8%) center / 26px 26px no-repeat;
+}
+.ttc-about__mv-card--mission::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23006699' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Ccircle cx='12' cy='12' r='6'/%3E%3Ccircle cx='12' cy='12' r='2'/%3E%3C/svg%3E");
+}
+.ttc-about__mv-card--vision::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23006699' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z'/%3E%3Ccircle cx='12' cy='12' r='3'/%3E%3C/svg%3E");
+}
+.ttc-about__mv-tag {
+	margin: 0 0 0.75rem !important;
+	color: var(--ttc-navy) !important;
+	font-size: 0.72rem !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+.ttc-about__mv-card h3,
+.ttc-about__mv-card .wp-block-heading {
+	margin: 0 0 0.75rem !important;
+	font-size: clamp(1.2rem, 1.9vw, 1.5rem) !important;
+	font-weight: 700 !important;
+	letter-spacing: -0.02em;
+}
+.ttc-about__mv-card p {
+	margin: 0 !important;
+	color: var(--ttc-muted) !important;
+	line-height: 1.7;
+}
+
+/* —— Giá trị cốt lõi —— */
+.ttc-about__values-section {
+	padding: 4.75rem 1.25rem !important;
+	background: var(--ttc-bg);
+	max-width: none !important;
+}
+.ttc-about__values-section > .ttc-about__section-heading,
+.ttc-about__values-section > .ttc-about__value-cards {
+	max-width: var(--ttc-container, 1280px);
+	margin-inline: auto;
+}
+.ttc-about__section-heading {
+	margin-bottom: 2.75rem;
+	text-align: center;
+}
+.ttc-about__section-heading .ttc-about__eyebrow { margin-bottom: 0.5rem !important; }
+.ttc-about__section-heading h2,
+.ttc-about__section-heading .wp-block-heading {
+	margin: 0 !important;
+	font-size: clamp(1.7rem, 2.6vw, 2.3rem) !important;
+	font-weight: 700 !important;
+	letter-spacing: -0.03em;
+}
+.ttc-about__value-cards.wp-block-columns {
+	display: grid !important;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.5rem !important;
+}
+.ttc-about__value-card.wp-block-column {
+	display: block;
+	margin: 0 !important;
+	padding: 2rem;
+	background: #fff;
+	border: 1px solid var(--ttc-line);
+	border-radius: 16px;
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.ttc-about__value-card:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 20px 40px -26px rgb(0 29 61 / 40%);
+}
+.ttc-about__value-card::before {
+	content: "";
+	display: block;
+	width: 52px;
+	height: 52px;
+	border-radius: 13px;
+	background: rgb(0 102 153 / 8%) center / 26px 26px no-repeat;
+}
+.ttc-about__value-card:nth-child(1)::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23006699' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3Cpath d='M9 12l2 2 4-4'/%3E%3C/svg%3E");
+}
+.ttc-about__value-card:nth-child(2)::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23006699' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2'/%3E%3Ccircle cx='9' cy='7' r='4'/%3E%3Cpath d='M23 21v-2a4 4 0 0 0-3-3.87'/%3E%3Cpath d='M16 3.13a4 4 0 0 1 0 7.75'/%3E%3C/svg%3E");
+}
+.ttc-about__value-card:nth-child(3)::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23006699' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 1 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E");
+}
+.ttc-about__value-card h3,
+.ttc-about__value-card .wp-block-heading {
+	margin: 1.25rem 0 0.5rem !important;
+	font-size: 1.1rem !important;
+	font-weight: 700 !important;
+}
+.ttc-about__value-card p {
+	margin: 0 !important;
+	color: var(--ttc-muted) !important;
+	font-size: 0.9rem;
+	line-height: 1.65;
+}
+
+/* CTA cuối trang dùng lại band tư vấn dùng chung [ttc_support] (.ttc-support),
+   không tự dựng dải CTA riêng — để màu & copy đồng nhất với trang chủ / shop. */
+
+@media (max-width: 1024px) {
+	.ttc-about__hero-grid,
+	.ttc-about__story-grid {
+		grid-template-columns: minmax(0, 1fr) !important;
+		flex-direction: column !important;
+	}
+	.ttc-about__hero-copy,
+	.ttc-about__story-copy,
+	.ttc-about__hero-image,
+	.ttc-about__story-image { min-width: 0; max-width: 100%; }
+	.ttc-about__hero-image img,
+	.ttc-about__story-image img { min-height: 0; max-width: 100%; aspect-ratio: 16 / 10; }
+	.ttc-about__stats.wp-block-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.ttc-about__stat.wp-block-column:nth-child(2) { border-right: 0; }
+	.ttc-about__stat.wp-block-column:nth-child(-n+2) { border-bottom: 1px solid var(--ttc-line); }
+	.ttc-about__mv-grid { grid-template-columns: 1fr !important; }
+}
+
+@media (max-width: 768px) {
+	.ttc-about__hero { padding: 2.75rem 1rem 4rem !important; }
+	.ttc-about__hero-actions { flex-direction: column; align-items: flex-start; }
+	.ttc-about__stats-band { margin-top: -2rem; }
+	.ttc-about__stats.wp-block-columns { grid-template-columns: 1fr; }
+	.ttc-about__stat.wp-block-column {
+		border-right: 0 !important;
+		border-bottom: 1px solid var(--ttc-line);
+	}
+	.ttc-about__stat.wp-block-column:last-child { border-bottom: 0; }
+	.ttc-about__story,
+	.ttc-about__values-section { padding-block: 3rem !important; }
+	.ttc-about__mv { padding-bottom: 3rem !important; }
+	.ttc-about__value-cards.wp-block-columns { grid-template-columns: 1fr; }
+}
+
+/* ============================================================
+   Trang Tuyển dụng (Careers) — bổ sung Quyền lợi / Chip / Quy trình / CTA
+   ============================================================ */
+/* —— Quyền lợi —— */
+.ttc-careers__perks {
+	padding: 4.75rem 1.25rem !important;
+	background: var(--ttc-bg);
+	max-width: none !important;
+}
+.ttc-careers__perks > .ttc-careers__section-heading,
+.ttc-careers__perks > .ttc-careers__perk-cards {
+	max-width: var(--ttc-container, 1280px);
+	margin-inline: auto;
+}
+.ttc-careers__perk-cards.wp-block-columns {
+	display: grid !important;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 1.25rem !important;
+}
+.ttc-careers__perk.wp-block-column {
+	display: block;
+	margin: 0 !important;
+	padding: 1.75rem;
+	background: #fff;
+	border: 1px solid var(--ttc-line);
+	border-radius: 16px;
+}
+.ttc-careers__perk::before {
+	content: "";
+	display: block;
+	width: 48px;
+	height: 48px;
+	border-radius: 12px;
+	background: rgb(0 102 153 / 8%) center / 24px 24px no-repeat;
+}
+.ttc-careers__perk:nth-child(1)::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23006699' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='8' r='6'/%3E%3Cpath d='M15.5 12.5L17 22l-5-3-5 3 1.5-9.5'/%3E%3C/svg%3E");
+}
+.ttc-careers__perk:nth-child(2)::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23006699' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 10L12 5 2 10l10 5 10-5z'/%3E%3Cpath d='M6 12v5c0 1 2 3 6 3s6-2 6-3v-5'/%3E%3C/svg%3E");
+}
+.ttc-careers__perk:nth-child(3)::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23006699' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'/%3E%3C/svg%3E");
+}
+.ttc-careers__perk:nth-child(4)::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23006699' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M23 6l-9.5 9.5-5-5L1 18'/%3E%3Cpath d='M17 6h6v6'/%3E%3C/svg%3E");
+}
+.ttc-careers__perk h3,
+.ttc-careers__perk .wp-block-heading {
+	margin: 1.1rem 0 0.5rem !important;
+	font-size: 1.02rem !important;
+	font-weight: 700 !important;
+}
+.ttc-careers__perk p {
+	margin: 0 !important;
+	color: var(--ttc-muted) !important;
+	font-size: 0.86rem;
+	line-height: 1.6;
+}
+
+/* —— Chip trong tin tuyển —— */
+.ttc-careers__job-main { flex: 1 1 24rem; }
+.ttc-careers__job-tags { gap: 0.5rem !important; margin-top: 0.9rem !important; }
+.ttc-careers__chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin: 0 !important;
+	padding: 0.32rem 0.72rem;
+	border: 1px solid var(--ttc-line);
+	border-radius: 999px;
+	background: var(--ttc-bg);
+	color: var(--ttc-text) !important;
+	font-size: 0.72rem !important;
+	font-weight: 600 !important;
+	line-height: 1.4;
+}
+.ttc-careers__chip::before {
+	content: "";
+	width: 14px;
+	height: 14px;
+	background: center / contain no-repeat;
+	flex: none;
+}
+.ttc-careers__chip--type::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23006699' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 6v6l4 2'/%3E%3C/svg%3E");
+}
+.ttc-careers__chip--place::before {
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23006699' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'/%3E%3Ccircle cx='12' cy='10' r='3'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 1024px) {
+	.ttc-careers__perk-cards.wp-block-columns { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+	.ttc-careers__perks { padding-block: 3rem !important; }
+	.ttc-careers__perk-cards.wp-block-columns { grid-template-columns: 1fr; }
+}
+
+/* Apply band reuses .ttc-support; keep copy white and aligned with page grid. */
+.ttc-careers .ttc-support,
+.ttc-careers__apply.ttc-support:not(.wp-block-cover) {
+	margin: 0;
+	min-height: 0;
+}
+#ung-tuyen {
+	scroll-margin-top: 6.5rem;
+}
+.ttc-careers__apply .ttc-support__inner,
+.ttc-careers__apply .ttc-support__inner:has(.ttc-support__form) {
+	min-height: 0;
+	padding-block: 4.25rem 3.5rem;
+	align-items: center;
+}
+.ttc-careers__apply .ttc-support__copy,
+.ttc-careers__apply .ttc-support__inner:has(.ttc-support__form) .ttc-support__copy {
+	padding: 0;
+	margin: 0;
+}
+.ttc-careers .ttc-support h2,
+.ttc-careers .ttc-support .wp-block-heading,
+.ttc-careers .ttc-support__copy p {
+	color: #fff !important;
+}
+.ttc-careers .ttc-support .ttc-support__form p,
+.ttc-careers .ttc-support .ttc-support__form .ttc-support__note {
+	color: var(--ttc-muted) !important;
+}
+.ttc-careers .ttc-support .ttc-support__form .ttc-support__note {
+	color: var(--ttc-text) !important;
+}
