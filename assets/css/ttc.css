@@ -3991,7 +3991,10 @@ body.home.page .ttc-knowledge-related {
 	letter-spacing: -0.03em;
 }
 
-.ttc-home-section__head p {
+/* Chi ap cho doan mo ta. `.ttc-home-link` cung la the <p> trong dau muc —
+   margin ngang `auto` se nuot het khoang trong va keo no vao giua, pha
+   `justify-content: space-between` khien "Xem tat ca" khong con sat mep phai. */
+.ttc-home-section__head p:not(.ttc-home-link) {
 	max-width: 42rem;
 	margin: 0.85rem auto 0;
 	color: var(--ttc-muted) !important;
