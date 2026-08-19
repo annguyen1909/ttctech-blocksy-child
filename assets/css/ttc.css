@@ -4803,7 +4803,10 @@ body.home .ttc-support {
 	display: flex !important;
 	min-height: 1160px;
 	padding: 4.25rem 1.25rem 5rem;
-	background: #0b1822 url("../img/faq-engineering-team.png") center / cover fixed no-repeat;
+	/* Khong dung `fixed`: lop nen `fixed` duoc scale theo viewport, nen khi khoi
+	   cao hon mot man hinh (min-height 1160px) thi phan duoi het anh, chi con mau
+	   nen. Giong het loi da sua o trang Lien he. */
+	background: #0b1822 url("../img/faq-engineering-team.png") center / cover no-repeat;
 }
 
 .ttc-faq-page.wp-block-cover > .wp-block-cover__image-background {
