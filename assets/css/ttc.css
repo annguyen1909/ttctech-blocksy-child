@@ -3943,6 +3943,24 @@ body.home.page .ttc-knowledge-related {
 	max-width: none;
 }
 
+/* `max-width: none` o tren la co chu y: trang dung bang block tu mang container
+   rieng, va vai block can tran vien. Nhung trang co noi dung HTML thuan (soan
+   bang trinh soan thao co dien, khong co the .wp-block-* nao boc) thi khong con
+   gi gioi han be rong — chu chay sat mep man hinh. Gioi han rieng cho cac the
+   van ban la con truc tiep; block Gutenberg khong khop selector nen khong dung toi. */
+.ttc-page > :is(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, pre, table, figure, hr, address) {
+	width: min(100% - 2rem, var(--ttc-container));
+	margin-inline: auto;
+}
+
+.ttc-page > :is(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, pre, table, figure, address):first-child {
+	margin-top: clamp(2rem, 4vw, 3.5rem);
+}
+
+.ttc-page > :is(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, pre, table, figure, address):last-child {
+	margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
 .ttc-page--home {
 	background: #fff;
 }
